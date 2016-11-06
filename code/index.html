@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FizzFlyer</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<!--menu-->
+<script src="js/scripts.js"></script>
+<link href="css/styles.css" rel="stylesheet">
+<!--//menu-->
+<!--theme-style-->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<script src="https://use.fontawesome.com/21ce1ffc64.js"></script>
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content=""/>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- slide -->
+<script src="js/responsiveslides.min.js"></script>
+   <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: true,
+      });
+    });
+  </script>
+</head>
+<body >
+<!--header-->
+	<div class="navigation">
+			<div class="container-fluid">
+				<nav class="pull">
+					<ul>
+						<li><a  href="index.html">Home</a></li>
+						<li><a  href="#">About Us</a></li>
+						<li><a  href="#">Blog</a></li>
+						<li><a  href="#">Terms</a></li>
+						<li><a  href="#">Privacy</a></li>
+						<li><a  href="#">Contact</a></li>
+					</ul>
+				</nav>			
+			</div>
+		</div>
+
+<div class="header">
+	<div class="container">
+		<!--logo-->
+			<div class="logo">
+				<h1><a href="index.html">FizzFlyer</a></h1>
+			</div>
+		<!--//logo-->
+		<div class="top-nav">
+			<ul class="right-icons">
+				<li><span ><i class="glyphicon glyphicon-phone"> </i>+91 90037 53661</span></li>
+				<li><a  href="#"><i class="glyphicon glyphicon-user"> </i>Login</a></li>
+				<li><a class="play-icon popup-with-zoom-anim" href="#small-dialog"><i class="glyphicon glyphicon-search"> </i> </a></li>
+				
+			</ul>
+			<div class="nav-icon">
+				<div class="hero nav_slide_button" id="hero">
+						<a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> </a>
+					</div>	
+				<!--
+				<a href="#" class="right_bt" id="activator"><i class="glyphicon glyphicon-menu-hamburger"></i>  </a>
+			-->
+			</div>
+		<div class="clearfix"> </div>
+			<!--pop-up-box-->
+			   
+				<link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all"/>
+				<script src="js/jquery.magnific-popup.js" type="text/javascript"></script>
+			<!---//pop-up-box---->
+				<div id="small-dialog" class="mfp-hide">
+					    <!----- tabs-box ---->
+				<div class="sap_tabs">	
+				     <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+						  <ul class="resp-tabs-list">
+						  	  <li class="resp-tab-item " aria-controls="tab_item-0" role="tab"><span>All Trips</span></li>
+							  <!-- <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>For </span></li>
+							  <li class="resp-tab-item" aria-controls="tab_item-2" role="tab"><span>For Rent</span></li> -->
+							  <div class="clearfix"></div>
+						  </ul>				  	 
+						  <div class="resp-tabs-container">
+						  		<h2 class="resp-accordion resp-tab-active" role="tab" aria-controls="tab_item-0"><span class="resp-arrow"></span>All Homes</h2><div class="tab-1 resp-tab-content resp-tab-content-active" aria-labelledby="tab_item-0" style="display:block">
+								 	<div class="facts">
+									  	<div class="login">
+											<input type="text" value="Search Address, Neighborhood, City or Zip" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Address, Neighborhood, City or Zip';}">		
+									 		<input type="submit" value="">
+									 	</div>        
+							        </div>
+						  		</div>
+							   
+					      </div>
+					 </div>
+					 <script src="js/easyResponsiveTabs.js" type="text/javascript"></script>
+				    	<script type="text/javascript">
+						    $(document).ready(function () {
+						        $('#horizontalTab').easyResponsiveTabs({
+						            type: 'default', //Types: default, vertical, accordion           
+						            width: 'auto', //auto or any width like 600px
+						            fit: true   // 100% fit in a container
+						        });
+						    });
+			  			 </script>	
+				</div>
+				</div>
+				 <script>
+						$(document).ready(function() {
+						$('.popup-with-zoom-anim').magnificPopup({
+							type: 'inline',
+							fixedContentPos: false,
+							fixedBgPos: true,
+							overflowY: 'auto',
+							closeBtnInside: true,
+							preloader: false,
+							midClick: true,
+							removalDelay: 300,
+							mainClass: 'my-mfp-zoom-in'
+						});
+																						
+						});
+				</script>
+					
+	
+		</div>
+		<div class="clearfix"> </div>
+		</div>	
+</div>
+<!--//-->	
+	<div class=" header-right">
+		<div class=" banner">
+			 <div class="slider">
+			    <div class="callbacks_container">
+			      <ul class="rslides" id="slider">		       
+					 <li>
+			          	 <div class="banner1">
+			           		<div class="caption">
+					          	<h3><span>Ooty</span> Trip</h3>
+					          	<p>Ooty trip + Industrial Visit</p>
+
+			          		</div>
+			          	</div>
+			         </li>
+					 <li>
+			          	 <div class="banner2">
+			           		<div class="caption">
+					          	<h3><span>Kodaikan</span>al Trip</h3>
+					          	<p>Kodaikanal trip + Industrial Visit</p>
+			          		</div>
+			          	</div>
+			         </li>
+			         <li>
+			          	 <div class="banner3">
+			           		<div class="caption">
+					          	<h3><span>Bangalo</span>re Trip</h3>
+					          	<p>Bangalore trip + Industrial Visit</p>
+			          		</div>
+			          	</div>
+			         </li>		
+			      </ul>
+			  </div>
+			</div>
+		</div>
+	</div>
+	 
+	<!--header-bottom-->
+	<div class="banner-bottom-top">
+			<div class="container">
+			<div class="bottom-header">
+				<div class="header-bottom">
+					<div class=" bottom-head">
+						<a href="#">
+							<div class="buy-media">
+								<i class="fa fa-bed fawesome" aria-hidden="true"></i>
+								<h6>Accommodation</h6>
+							</div>
+						</a>
+					</div>
+					<div class=" bottom-head">
+						<a href="#">
+							<div class="buy-media">
+							<i class="fa fa-road fawesome" aria-hidden="true"></i>
+							<h6>Travel</h6>
+							</div>
+						</a>
+					</div>
+					<div class=" bottom-head">
+						<a href="#">
+							<div class="buy-media">
+							<i class="fa fa-motorcycle fawesome" aria-hidden="true"></i>
+							<h6>Games</h6>
+							</div>
+						</a>
+					</div>
+					<div class=" bottom-head">
+						<a href="#">
+							<div class="buy-media">
+							<i class="fa fa-binoculars fawesome" aria-hidden="true"></i>
+							<h6>Sight Seeing</h6>
+							</div>
+						</a>
+					</div>
+					<div class=" bottom-head">
+						<a href="#">
+							<div class="buy-media">
+							<i class="fa fa-blind fawesome" style="" aria-hidden="true"></i>
+							<h6>Trekking</h6>
+							</div>
+						</a>
+					</div>
+					<div class=" bottom-head">
+						<a href="#">
+							<div class="buy-media">
+							<i class="fa fa-glass fawesome" aria-hidden="true"></i>
+							<h6>Food</h6>
+							</div>
+						</a>
+					</div>
+					<div class=" bottom-head">
+						<a href="#">
+							<div class="buy-media">
+							<i class="deal"> </i>
+							<h6>Plans</h6>
+							</div>
+						</a>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+	</div>
+	</div>
+			<!--//-->
+				
+	<!--//header-bottom-->
+	
+	
+<!--//header-->
+<!--content-->
+<div class="content">
+	<div class="content-grid">
+		<div class="container">
+			<h3>Most Popular</h3>
+				<div class="col-md-4 box_2">
+			     	 <a href="#" class="mask">
+			     	   	<img class="img-responsive zoom-img fix" src="images/ooty.jpg" alt="">
+			     	   	<span class="four">Rs. 5,000</span>
+			     	 </a>
+			     	   <div class="most-1">
+			     	   	 <h5><a href="#">Ooty Trip + Industrial visit</a></h5>
+			     	    	<p>Organised By Abhishek Gupta.</p>
+			     	   </div>
+			 </div>
+			  <div class="col-md-4 box_2">
+		     	 <a href="#" class="mask">
+			     	   	<img class="img-responsive zoom-img fix" src="images/kodai.jpg" alt="">
+			     	   	<span class="four">Rs. 5,000</span>
+			     	 </a>
+		     	   <div class="most-1">
+			     	   	<h5><a href="#">Kodaikanal Trip</a></h5>
+			     	    	<p>Organised By Abhishek Gupta.</p>
+			     	   </div>
+		     	
+		      </div>
+			  <div class="col-md-4 box_2">
+		     	 <a href="#" class="mask">
+			     	   	<img class="img-responsive zoom-img fix" src="images/bangalore.jpg" alt="" >
+			     	   	<span class="four">Rs. 5,000</span>
+			     	 </a>
+		     	   <div class="most-1">
+			     	   	 <h5><a href="#">Bangalore Trip</a></h5>
+			     	    	<p>Organised By Abhishek Gupta.</p>
+			     	   </div>
+		     	
+		      </div>
+		 	<div class="clearfix"> </div>
+		</div>
+	</div>
+<!--service-->
+	<div class="services">
+		<div class="container">
+			<div class="service-top">
+				<h3>Services</h3>
+				<p>The world is book and those who do not travel read only one page.</p>
+			</div>
+			<div class="services-grid">
+		   		<div class="col-md-6 service-top1">
+		   			<div class=" ser-grid">	
+		   				<a href="#" class="hi-icon hi-icon-archive"><i class="fa fa-fire" style="font-size: 22px;" aria-hidden="true"></i> </a>
+		   			</div>
+		   			<div  class="ser-top">
+		   				<h4>Bonfire</h4>
+		   				<p>Hanging out by one of these with some good friends is my idea of a good time. Sitting around a bonfire with those who bring out the best in you not the stress in you.</p>
+		   		    </div>
+					<div class="clearfix"> </div>
+		   	   </div>
+				<div class="col-md-6 service-top1">
+		   			<div class=" ser-grid">	
+		   				<a href="#" class="hi-icon hi-icon-archive"><i class="fa fa-leaf" style="font-size: 22px;" aria-hidden="true"></i> </a>
+		   			</div>
+		   			<div  class="ser-top">
+		   				<h4>Food (breakfast + dinner)</h4>
+		   				<p>Food is essential to life therefore <b>make it good</b>. One should not attend even the end of the world without a good <b>Breakfast</b>.</p>
+		   		    </div>
+					<div class="clearfix"> </div>
+		   		</div>
+		   	<div class="clearfix"> </div>
+		 </div>
+		 <div class="services-grid">
+			   	<div class="col-md-6 service-top1">
+			   		<div class=" ser-grid">	
+			   			<a href="#" class="hi-icon hi-icon-archive"><i class="fa fa-puzzle-piece" style="font-size: 22px;" aria-hidden="true"></i> </a>
+			   		</div>
+			   		<div  class="ser-top">
+			   			<h4>Games (Indoor + Outdoor)</h4>
+			   				<p>We will provide most amazing group games which you never expect and Playing games with them who don't know much is the most amazing exprience in the world.</p>
+			   		</div>
+					<div class="clearfix"> </div>
+			   	</div>
+				<div class="col-md-6 service-top1">
+			   		<div class=" ser-grid">	
+			   			<a href="#" class="hi-icon hi-icon-archive"><i class="fa fa-bed" style="font-size: 22px;" aria-hidden="true"></i> </a>
+			   		</div>
+			   		<div  class="ser-top">
+			   			<h4>Accomodation</h4>
+			   			<p>We will provide family like place where you can freely enjoy and make alot of new friends there.</p>
+			   		</div>
+					<div class="clearfix"> </div>
+			   	</div>
+		   	  <div class="clearfix"> </div>
+		 	</div>
+		</div>
+	</div>
+<!--//services-->
+<!--features-->
+		<div class="content-middle" >
+			<div class="container">
+				<div class="mid-content">
+					<h3>the best features</h3>
+					<p><strong>Industrail visit</strong> is very importent to any student undergoing professional education such as Engineering, Bussiness Management, Biotechnology, Pharmacy, Architecture and Many more, no institute providing these course....</p>
+					<a class="hvr-sweep-to-right more-in" href="#">Read More</a>
+				</div>
+			</div>
+		</div>
+<!--//features-->
+
+<!--project-->
+	
+		
+<!--partners-->
+	<div class="content-bottom1" style="background:#fff;">
+		<h3>Our Partners</h3>
+	 		<div class="container">
+				<ul>
+					<li><a href="#"><img class="img-responsive" src="images/lg.png" alt=""></a></li>
+					<li><a href="#"><img class="img-responsive" src="images/lg1.png" alt=""></a></li>
+					<li><a href="#"><img class="img-responsive" src="images/lg2.png" alt=""></a></li>
+					<li><a href="#"><img class="img-responsive" src="images/lg3.png" alt=""></a></li>
+					<li><a href="#"><img class="img-responsive" src="images/lg4.png" alt=""></a></li>
+				<div class="clearfix"> </div>
+				</ul>
+				<ul>
+					<li><a href="#"><img class="img-responsive" src="images/lg5.png" alt=""></a></li>
+					<li><a href="#"><img class="img-responsive" src="images/lg6.png" alt=""></a></li>
+					<li><a href="#"><img class="img-responsive" src="images/lg7.png" alt=""></a></li>
+					<li><a href="#"><img class="img-responsive" src="images/lg8.png" alt=""></a></li>
+					<li><a href="#"><img class="img-responsive" src="images/lg9.png" alt=""></a></li>	
+				<div class="clearfix"> </div>
+				</ul>
+			</div>
+		</div>	
+<!--//partners-->	
+	</div>
+<!--footer-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-top-at">
+			<div class="col-md-3 amet-sed">
+				<h4>Our Company</h4>
+				<ul class="nav-bottom">
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Terms & Conditions</a></li>
+					<li><a href="#">Privacy Policy</a></li>	
+					<li><a href="#">Blog</a></li>
+					
+				</ul>	
+			</div>
+			<div class="col-md-3 amet-sed ">
+				<h4>Property Services</h4>
+				   <ul class="nav-bottom">
+						<li><a href="#"> Sevices</a></li>
+						<li><a href="#">Transportation</a></li>
+						<li><a href="#">Login</a></li>
+						<li><a href="#">Register</a></li>	
+					</ul>	
+			</div>
+			<div class="col-md-3 amet-sed">
+				<h4>Customer Support</h4>
+				<p>Mon-Fri, 5PM-10PM </p>
+				<p>Sat-Sun, 8AM-5PM </p>
+				<p>+91 9003753661</p>
+					<ul class="nav-bottom">
+						<li><a href="#">Live Chat</a></li>
+						<li><a href="#">Frequently Asked Questions</a></li>
+						<li><a href="#">Make a Suggestion</a></li>
+					</ul>	
+			</div>
+			<div class="col-md-3 amet-sed ">
+				<h4>Work With Us</h4>
+					<ul class="nav-bottom">
+						<li><a href="#">Business Development</a></li>
+						<li><a href="#">Affiliate Programs</a></li>
+						<li><a href="#">Sitemap</a></li>
+						<li><a href="#">Careers</a></li>
+						<li><a href="#">Feedback</a></li>	
+					</ul>
+					
+					<ul class="social">
+						<li><a href="#"><i> </i></a></li>
+						<li><a href="#"><i class="gmail"> </i></a></li>
+						<li><a href="#"><i class="twitter"> </i></a></li>
+						<li><a href="#"><i class="camera"> </i></a></li>
+						<li><a href="#"><i class="dribble"> </i></a></li>
+					</ul>
+			</div>
+		<div class="clearfix"> </div>
+		</div>
+	</div>
+	<div class="footer-bottom">
+		<div class="container">
+			<div class="col-md-4 footer-logo">
+				<h2><a href="index.html">FizzFlyer</a></h2>
+			</div>
+			<div class="col-md-8 footer-class">
+				<p >© 2015 Fizzflyer. All Rights Reserved. </p>
+			</div>
+		<div class="clearfix"> </div>
+	 	</div>
+	</div>
+</div>
+<!--//footer-->
+</body>
+</html>

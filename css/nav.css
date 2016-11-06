@@ -1,0 +1,9 @@
+ul .dropdown-menu{
+	padding: 10px;
+    margin: 20px -12px;
+}
+.customdrop{
+	background: transparent;
+    border: none;
+    color: #fff;
+}
