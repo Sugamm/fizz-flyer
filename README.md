@@ -7,7 +7,7 @@
 
 ##Screenshot
 
-1. Home Page (where you can select your place)
+1. Home Page
 ![alt tag](https://github.com/Sugamm/fizz-flyer/blob/master/images/screenshot2.png)
 
 
