@@ -1,4 +1,8 @@
 <?php
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
 require_once 'manual/class.user.php';
 $user = new USER();
 
@@ -59,49 +63,12 @@ include 'code/head.php';
 ?>
 <div class=" banner-buying">
 	<div class=" container">
-	<h3><span>Rese</span>t Password</h3> 
-	<!---->
-	<div class="menu-right">
-		 <ul class="menu">
-			<li class="item1"><a href="#"> Menu<i class="glyphicon glyphicon-menu-down"> </i> </a>
-			<ul class="cute">
-				<li class="subitem1"><a href="index.php">Home </a></li>
-				<li class="subitem2"><a href="contact.php">Contact </a></li>
-				<li class="subitem3"><a href="Register.php">Register </a></li>
-				<li class="subitem1"><a href="suggestion.php">Suggestion</a></li>
-				<li class="subitem2"><a href="terms.php">Terms </a></li>
-				<li class="subitem3"><a href="faqs.php">FAQ </a></li>
-			</ul>
-		</li>
-		</ul>
-	</div>
-	<div class="clearfix"> </div>
-		<!--initiate accordion-->
-		<script type="text/javascript">
-			$(function() {
-			    var menu_ul = $('.menu > li > ul'),
-			           menu_a  = $('.menu > li > a');
-			    menu_ul.hide();
-			    menu_a.click(function(e) {
-			        e.preventDefault();
-			        if(!$(this).hasClass('active')) {
-			            menu_a.removeClass('active');
-			            menu_ul.filter(':visible').slideUp('normal');
-			            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-			        } else {
-			            $(this).removeClass('active');
-			            $(this).next().stop(true,true).slideUp('normal');
-			        }
-			    });
-			
-			});
-		</script>
-      		
+		<h3><span>Rese</span>t Password</h3> 
+		<div class="clearfix"> </div>     		
 	</div>
 </div>
 		<div class="login-right">
 	<div class="container">
-		<h3>Reset Password</h3>
 		<div class="login-top">
 				
 				<div class="form-info">

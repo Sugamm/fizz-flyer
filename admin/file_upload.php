@@ -1,4 +1,8 @@
 <?php
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
 function fileUpload($image_name, $tmp_name, $fileExt)
 {
     $target_dir = "../uploads/".$image_name;
@@ -36,9 +40,8 @@ function fileUpload($image_name, $tmp_name, $fileExt)
         return $err;
     // if everything is ok, try to upload file
     } else {
-    $wmax = 1200;
-    $hmax = 750;
-        image_crop($tmp_name, $wmax, $hmax, $fileExt);
+   
+        
         $moved = move_uploaded_file($tmp_name, $target_dir) or die("Error");
         if ($moved) {
             echo "The file ". basename($image_name). " has been uploaded.";

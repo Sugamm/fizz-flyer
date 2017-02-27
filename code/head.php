@@ -1,11 +1,15 @@
 <?php
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
 session_start();
 require_once 'manual/class.user.php';
 $user_home = new USER();
 
 if(!$user_home->is_logged_in())
 {
-	$stat ='<li><a  href="login.php"><i class="glyphicon glyphicon-user"> </i>Login</a></li>';
+	$stat ='<li data-toggle="modal" data-target="#myModal"><a  href="#"><i class="glyphicon glyphicon-user"> </i>Login</a></li>';
 }else{
 
 $stmt = $user_home->runQuery("SELECT * FROM tbl_users WHERE userID=:uid");
@@ -25,6 +29,12 @@ $stat = '<li>
 }
 
 ?>
+<!-- 
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
+ -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,13 +71,9 @@ $stat = '<li>
 				<nav class="pull">
 					<ul>
 						<li><a  href="index.php">Home</a></li>
-						<li><a  href="blog.php">Programs</a></li>
-						<li><a href="Register.php">Register </a></li>
-						<li><a href="suggestion.php">Suggestion</a></li>
-						<li><a href="terms.php">Terms </a></li>
-						<li><a href="faqs.php">FAQ </a></li>
-						<li><a  href="privacy.php">Privacy</a></li>
-						<li><a  href="about.php">About Us</a></li>
+						<li><a  href="index.php#services">Service</a></li>
+						<li><a href="terms.php">Terms & policies </a></li>
+						<li><a  href="contact.php">About Us</a></li>
 						<li><a  href="contact.php">Contact</a></li>
 					</ul>
 				</nav>			
@@ -78,13 +84,13 @@ $stat = '<li>
 	<div class="container">
 		<!--logo-->
 			<div class="logo" style="display: inline-flex;">
-				<h1><a href="index.php"><img src="images/3.png" class="img-responsive" style="height: 35px;margin: 0 0 0 12px;"  alt="Logo" title="FizzFlyer"></a></h1>
-  				<h1 style="color:#fff; text-shadow:-3px 3px 8px #333">Fizzflyer</h1>
+				<h1><a href="index.php"><img src="images/headerLogo.png" class="img-responsive" style="height: 35px;margin: 0 0 0 12px;"  alt="Logo" title="FizzFlyer"></a></h1>
+  				<h1 style="color:#fff; text-shadow:-3px 3px 8px #333"><a href="index.php">fizzflyer</a></h1>
   			</div>
 		<!--//logo-->
 		<div class="top-nav">
 			<ul class="right-icons">
-				<li><span ><i class="glyphicon glyphicon-phone"> </i>+91 701-050-9355</span></li>
+				<li><span ><i class="glyphicon glyphicon-phone"> </i>+91 988-420-4686</span></li>
 				<?php  echo $stat; ?>
 			</ul>
 			<div class="nav-icon">
@@ -96,15 +102,65 @@ $stat = '<li>
 			-->
 			</div>
 		<div class="clearfix"> </div>
-				
-		<script>
-		  function signOut() {
-		    var auth2 = gapi.auth2.getAuthInstance();
-		    auth2.signOut().then(function () {
-		      console.log('User signed out.');
-		    });
-		  }
-		</script>	
+			<!-- Modal -->
+				<div id="myModal" class="modal fade" role="dialog">
+				  <div class="modal-dialog">
+
+				    <!-- Modal content-->
+				    <div class="modal-content">
+					    <div class="modal-body">
+					      <div class="login-right">
+							<h3>Login</h3>
+							<div class="login-top">
+								<?php 
+								if(isset($_GET['inactive']))
+								{
+									?>
+						            <div class='alert alert-error'>
+										<strong>Sorry!</strong> This Account is not Activated Go to your Inbox and Activate it.
+										<strong><?php echo $msg;?> </strong>
+									</div>
+						            <?php
+								}
+								?>
+								<div class="form-info" style="padding:0;">
+							        <form class="form-signin" method="post" action="login.php">
+							        	<div class='alert alert-error'>
+											<strong><?php echo $msg;?></strong>
+										</div>
+							       		<?php
+									        if(isset($_GET['error']))
+											{
+												?>
+									            <div class='alert alert-success'>
+													<strong>Wrong Details!</strong> 
+												</div>
+									            <?php
+											}
+										?>	
+									
+										<input type="email" class="text" placeholder="Email address" name="txtemail" required>
+										<input type="password"  placeholder="Password" placeholder="Password" name="txtupass" required>
+										 <label class="hvr-sweep-to-right">
+								           	<input type="submit" value="Submit" name="btn-login">
+								           </label>
+								         <a href="fpass.php">Lost your Password ? </a>
+									</form>
+								</div>
+							</div>
+						  </div>
+					   </div>
+				      <div class="modal-footer">
+				        <div class="create">
+							<h4>New To FizzFlyer?</h4>
+							<a class="hvr-sweep-to-right" href="register.php">Create an Account</a>
+							<div class="clearfix"> </div>
+						</div>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+				<!-- //model -->	
 	
 		</div>
 		<div class="clearfix"> </div>

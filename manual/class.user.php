@@ -1,5 +1,9 @@
 <?php
 
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
 require_once 'dbconfig.php';
 
 class USER
@@ -109,25 +113,39 @@ class USER
 	
 	function send_mail($email,$message,$subject)
 	{						
-		require_once('mailer/class.phpmailer.php');
-		$mail = new PHPMailer();
-		$mail->IsSMTP(); 
-		$mail->SMTPDebug  = 0;                     
-		$mail->SMTPAuth   = true;                  
-		$mail->SMTPSecure = "ssl";                 
-		$mail->Host       = "smtp.gmail.com"; 
-		$mail->Port       = 25;               
-		$mail->AddAddress($email);
-		$mail->Username="fizzflyer247@gmail.com";  
-		$mail->Password="Sugam0030";            
-		$mail->SetFrom('fizzflyer247@fizzflyer.in','FizzFlyer');
-		$mail->AddReplyTo("fizzflyer247@fizzflyer.in","FizzFlyer");
-		$mail->Subject    = $subject;
-		$mail->MsgHTML($message);
-		if ($mail->Send()) {
-			echo "Message Sent!";
+		// require_once('mailer/class.phpmailer.php');
+		// $mail = new PHPMailer();
+		// $mail->IsSMTP(); 
+		// $mail->SMTPDebug  = 0;                     
+		// $mail->SMTPAuth   = true;                  
+		// $mail->SMTPSecure = "ssl";                 
+		// $mail->Host       = "smtp.gmail.com"; 
+		// $mail->Port       = 465;               
+		// $mail->AddAddress($email);
+		// $mail->Username="fizzflyer247@gmail.com";  
+		// $mail->Password="Sugam0030";            
+		// $mail->SetFrom('fizzflyer247@fizzflyer.in','FizzFlyer');
+		// $mail->AddReplyTo("fizzflyer247@fizzflyer.in","FizzFlyer");
+		// $mail->Subject    = $subject;
+		// $mail->MsgHTML($message);
+		// if ($mail->Send()) {
+		// 	echo "Message Sent!";
+		// }else{
+		// 	echo "Not Sent.";
+		// }
+
+		// Always set content-type when sending HTML email
+		$headers = "MIME-Version: 1.0" . "\r\n";
+		$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+		// More headers
+		$headers .= 'From: <fizzflyer247@gmail.com>' . "\r\n";
+		$headers .= 'Cc: fizzflyer247@gmail.com' . "\r\n";
+		$mail = mail($email, $subject, $message, $headers);
+		if ($mail) {
+			$msgmail= "success!";
 		}else{
-			echo "Not Sent.";
+			$msgmail= "Error";
 		}
 	}	
 }

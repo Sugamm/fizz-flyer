@@ -1,13 +1,31 @@
 <?php
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
 error_reporting (E_ALL ^ E_NOTICE);
 include "index.php";
-include '../code/dbconfig.php';
 include "file_upload.php";
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  $data = addslashes($data);
+  return $data;
+}
+ 
+$host = "LOCALHOST";
+$user = "root";
+$password = "Sugam0030";
+$database = "fizzflyer";
+
+$con = @mysqli_connect($host,$user,$password,$database) or die('<h1 style="text-align:center">ERROR : 404 Connection Error</h1>');
 // Check if image file is a actual image or fake image
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['submit_header'])) {
 	$title =  $_POST["title"];
 	$Header_image = $_FILES["fileToUpload"]["name"];
-	$description = $_POST["description"];
+	$description = test_input($_POST["description"]);
 	$startPlace =  $_POST["startPlace"];
 	$startDate =  $_POST["startDate"];
 	$endPlace =  $_POST["endPlace"];
@@ -26,9 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $file_dir = "../uploads/";
 
     if(file_exists($file_dir.$Header_image)) {
-    	 $query = 'INSERT Into details(title, imageName, description, startPlace, startDate, endPlace, endDate, price, peopleResgister) Values ("'.$title.'","'.$Header_image.'","'.$description.'","'.$startPlace.'","'.$startDate.'","'.$endPlace.'","'.$endDate.'","'.$price.'","'.$peopleResgister.'")';
-       	echo $query;
-        $result = mysqli_query($con, $query);
+    	 $query = 'INSERT Into details(title, imageName, description, startPlace, startDate, endPlace, endDate, price, peopleRegistered) Values ("'.$title.'","'.$Header_image.'","'.$description.'","'.$startPlace.'","'.$startDate.'","'.$endPlace.'","'.$endDate.'","'.$price.'","'.$peopleResgister.'")';
+       	// echo $query;
+        $result = mysqli_query($con, $query) or die("db Error!!".mysqli_error($con));
         if ($result != true) {
         	$msg = "DB Error";
         }else{
@@ -39,7 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
        
     } 
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,10 +91,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				<nav>
 					<ul>
 						<li><a href="#section-1" class="icon-shop"><span>Post Artical</span></a></li>
-						<li><a href="#section-2" class="icon-cup"><span>Trip Page</span></a></li>
-						<li><a href="#section-3" class="icon-food"><span>Registered</span></a></li>
-						<li><a href="#section-4" class="icon-lab"><span>Suggestation</span></a></li>
-						<li><a href="#section-5" class="icon-truck"><span>FeedBack</span></a></li>
+						<li><a href="#section-2" class="icon-cup"><span>Registered</span></a></li>
+						<!-- <li><a href="#section-3" class="icon-food"><span>Registered</span></a></li> -->
+						<li><a href="#section-4" class="icon-lab"><span>FeedBack</span></a></li>
+						<!-- <li><a href="#section-5" class="icon-truck"><span>FeedBack</span></a></li> -->
 					</ul>
 				</nav>
 				<div class="content">
@@ -93,13 +110,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
        
         <div class="panel-body">
-          <form class="form-horizontal row-border" action="#" method="post" enctype="multipart/form-data">
+          <form action="#" method="post" class="form-horizontal row-border" enctype="multipart/form-data" novalidate>
            
-            <div class="form-group">
-              <div class="col-md-10">
-                 <p class="text-danger"><?php echo $msg; ?></p>
-              </div>
-            </div>
+           
             <div class="form-group">
               <label class="col-md-2 control-label"> Title</label>
               <div class="col-md-10">
@@ -160,6 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                <input class="btn btn-primary" type="submit" name="submit_header" value="Submit">
               </div>
             </div>
+
           </form>
         </div>
       </div>
@@ -177,9 +191,11 @@ if (mysqli_num_rows($select_result) > 0) {
         // echo "id: " . $row["Header_id"]. " - Name: " . $row["title"]. " " . $row["sDescription"]. " " . $row["image"]. "<br>";
         // echo '<img src="../uploads/'.$row["image"].'" alt="image" />';
     		echo '<div class="mediabox" style="">
-					<img src="../uploads/'.$rowshow["imageName"].'" alt="image" height="300" />
+					<a href="http://fizzflyer.in/artical.php?id='.$rowshow['id'].'" style="    text-decoration: none;
+    color: inherit;"><img src="../uploads/'.$rowshow["imageName"].'" alt="image" height="300" />
 					<h3>'.$rowshow["title"].'</h3>
-					<p>'.$rowshow['description'].'</p>
+					<p>'.htmlspecialchars_decode($rowshow['description']).'</p>
+					</a>
 				  </div>';
         
     }
@@ -203,25 +219,29 @@ if (mysqli_num_rows($select_result) > 0) {
 						    </thead>
 						    <tbody>
 
-						     <?php 
+<?php 
+	
 
-  	$reg = "SELECT * FROM registerdTrips INNER JOIN tbl_users ON registerdTrips.userId = tbl_users.userID";
-  	echo $reg;
-  	$select_reg= mysqli_query($con, $reg) or die("ERORRRRR");
 
-					if (mysqli_num_rows($select_result) > 0) {
-					    // output data of each row
-					    while($rowreg = mysqli_fetch_assoc($select_result)) {
-					    	echo ' 
-					    	<tr>
-						        <td>'.$rowreg['userID'].'</td>
-						        <td>Doe</td>
-						        <td>john@example.com</td>
-						    </tr>';
-					    }
-					} else {
-					    echo "0 results";
-					}
+	$reg_query = "SELECT * FROM registerdTrips INNER JOIN tbl_users ON registerdTrips.userId=tbl_users.userID";
+	// echo $reg_query;
+	$select_reg= mysqli_query($con, $reg_query) or die("ERORRRRR".mysqli_error($con));
+
+	if (mysqli_num_rows($select_reg)>0) {
+	// output data of each row
+	while($rowreg=mysqli_fetch_array($select_reg)) {
+		echo ' 
+		<tr>
+		    <td>'.$rowreg['userId'].'</td>
+		    <td>'.$rowreg['userName'].'</td>
+		    <td>'.$rowreg['userEmail'].'</td>
+		    <td>'.$rowreg['phone'].'</td>
+		    <td>'.$rowreg['tripName'].'</td>
+		</tr>';
+		}
+	} else {
+	echo "0 results";
+	}
 
 
   ?>
@@ -229,7 +249,8 @@ if (mysqli_num_rows($select_result) > 0) {
 						    </tbody>
 						  </table>
 					</section>
-					<section id="section-3">
+					<!-- <section id="section-3">
+
 						<div class="mediabox">
 							<img src="img/02.png" alt="img02" />
 							<h3>Noodle Curry</h3>
@@ -245,9 +266,50 @@ if (mysqli_num_rows($select_result) > 0) {
 							<h3>Green Tofu Wrap</h3>
 							<p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut wasabi tofu broccoli mixture soup.</p>
 						</div>
-					</section>
+					</section> -->
 					<section id="section-4">
-						<div class="mediabox">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>User Id</th>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Suggestion</th>
+									<th>Date</th>
+								</tr>
+							</thead>
+						<tbody>
+
+						<?php 
+
+
+
+						$feedback_query = "SELECT * FROM feedback";
+						// echo $reg_query;
+						$select_feedback= mysqli_query($con, $feedback_query) or die("ERORRRRR".mysqli_error($con));
+
+						if (mysqli_num_rows($select_feedback)>0) {
+						// output data of each row
+						while($rowfeedback=mysqli_fetch_array($select_feedback)) {
+						echo ' 
+						<tr>
+							<td>'.$rowfeedback['id'].'</td>
+							<td>'.$rowfeedback['name'].'</td>
+							<td>'.$rowfeedback['email'].'</td>
+							<td>'.$rowfeedback['message'].'</td>
+							<td>'.$rowfeedback['feedbackDate'].'</td>
+						</tr>';
+						}
+						} else {
+						echo "<tr><td>0 results</td></tr>";
+						}
+
+
+						?>
+
+						</tbody>
+						</table>
+						<!-- <div class="mediabox">
 							<img src="img/03.png" alt="img03" />
 							<h3>Tomato Cucumber Curd</h3>
 							<p>Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea tomato spring onion azuki bean gourd. </p>
@@ -261,7 +323,7 @@ if (mysqli_num_rows($select_result) > 0) {
 							<img src="img/04.png" alt="img04" />
 							<h3>Swiss Celery Chard</h3>
 							<p>Celery quandong swiss chard chicory earthnut pea potato. Salsify taro catsear garlic gram celery bitterleaf wattle seed collard greens nori. </p>
-						</div>
+						</div> -->
 					</section>
 					<section id="section-5">
 						<div class="mediabox">

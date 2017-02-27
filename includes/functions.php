@@ -1,4 +1,8 @@
 <?php
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
 class Users {
 	public $table_name = 'users';
 	

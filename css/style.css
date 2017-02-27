@@ -1,4 +1,7 @@
-
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
 @font-face {
     font-family: 'Montserrat-Regular';
     src:url(../fonts/Montserrat-Regular.ttf) format('truetype');
@@ -36,8 +39,29 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 /*--header--*/
 .header{
-  	background-color: #226666; 
-  	  padding: 0.8em 0;
+  	background-color: transparent;
+  	position: absolute;
+  	right: 30px;
+  	left: 20px;
+  	z-index: 9;
+  	padding: 0.8em 0;
+}
+@media (max-width: 1030px){
+	.header{
+		position: absolute;
+		left: 20px;
+	  	right: 30px;
+	}
+}
+@media (max-width: 420px){
+	.header{
+	  	background-color: #000;
+	  	position:inherit;
+	  	right: 0;
+	}
+}
+.modal-backdrop{
+	z-index: 0;
 }
 .bottom-head {
 	text-align: center;
@@ -201,6 +225,7 @@ i.deal{
 .logo h1 a{
 	text-decoration: none;
 	color:#fff;
+	font-style: italic;
 }
 .right-icons li{
 	display: inline-block;
@@ -328,6 +353,14 @@ h2.resp-accordion:hover{
 	padding:2em  1.5em;
 }
 /*----*/
+.modal-content{
+	border-radius: 0px;
+}
+@media (min-width: 768px){
+.modal-dialog {
+    width: 500px;
+}
+}
 .login{
 	background-color: #fff;
   	border-radius: 3px;
@@ -423,17 +456,19 @@ ul.callbacks_tabs.callbacks1_tabs {
   	display: inline-block;
   	font-family: 'Montserrat-Regular';
   	padding: 0 0 0.3em;
+  	text-shadow: 0 0 10px #000;
 }
 .caption h3 span{
 	border-bottom: 7px solid #d35400;
 }
 .caption p{
 	color: #fff;
-	font-size: 1.7em;
+	font-size: 1.3em;
 	margin: 0.5em 0em 0;
+	text-shadow: 0 0 10px #000;
 }
 .banner1{
-	background: url(../images/ootyh.jpg) no-repeat;
+	background: url(../images/1.jpg) no-repeat;
 	width:100%;
 	min-height: 550px;
 	background-size: cover;
@@ -442,7 +477,7 @@ ul.callbacks_tabs.callbacks1_tabs {
   -o-background-size: cover;
 }
 .banner2{
-	background: url(../images/kodai.jpg) no-repeat;
+	background: url(../images/2.jpg) no-repeat;
 	width:100%;
 	min-height: 550px;
 	background-size: cover;
@@ -451,7 +486,7 @@ ul.callbacks_tabs.callbacks1_tabs {
   -o-background-size: cover;
 }
 .banner3{
-	background: url(../images/coorg.jpg) no-repeat;
+	background: url(../images/3.jpg) no-repeat;
 	width:100%;
 	min-height: 550px;
 	background-size: cover;
@@ -1095,9 +1130,9 @@ transform: rotatey(360deg);
 }
 /*--buy--*/
 .banner-buying {
-  background: url(../images/4.jpg) no-repeat;
+  background: #00a699;
   width: 100%;
-  min-height: 250px;
+  min-height: 200px;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -1106,12 +1141,11 @@ transform: rotatey(360deg);
 .banner-buying h3{
 	color: #fff;
 	font-size: 3em;
-  	text-transform: uppercase;
   	display: inline-block;
   	font-family: 'Montserrat-Regular';
-  	padding: 0 0 0.3em;
+  	padding: 0em;
   	float: left;
-  	margin-top: 1.8em;
+  	margin-top: 2em;
 }
 .banner-buying h3 span{
 	border-bottom: 7px solid #d35400;
@@ -2795,7 +2829,7 @@ p.privacy-para {
 	  color: #000;
 	  font-size: 3em;
 	  font-family: 'Montserrat-Regular';
-	  margin: 0 0 1em;
+	  margin: 23px 0 -11px 0em;
 }
 .login-right h3:after, .login-right h3:before {
   	width: 130px;
@@ -2909,10 +2943,10 @@ ul.login-icons li:nth-child(2),ul.login-icons li:nth-child(4) {
   	padding: 10px 15px;
 }
 .create{
-	padding: 2em 0 0 ;
+	/*padding: 2em 0 0 ;*/
 }
 .login-right {
-  padding: 5em 0;
+  padding:  0;
 }
 .form-info {
   padding: 2em 0 0;
@@ -3792,10 +3826,10 @@ h3.typo1 {
   min-height: 280px;
 }
 .caption h3 {
-  font-size: 2.4em;
+  font-size: 1.3em;
 }
 .caption p {
-  font-size: 1.3em;
+  font-size: 0.9em;
   margin: 0.3em 0em 0;
 }
 .caption {

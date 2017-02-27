@@ -1,11 +1,15 @@
 <?php
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
  include 'code/head.php';
 session_start();
 require_once 'manual/class.user.php';
 include 'code/dbconfig.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	if ($row['userName'] == $_POST['tname'] && $row['userEmail'] == $_POST['temail']) {
+	
 		$name = test_input($_POST['tname']);
 		$email = test_input($_POST['temail']);
 		$phone = test_input($_POST['tphone']);
@@ -16,11 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$msg = "Thank you for registeration, we'll reach you soon!!.";
 		}else{
 			$err = 'ERROR : 404 Query Execution Error';
-		}
-	}else{
-		$error1 = "Your Name and Email doesn't match with our record. ";
-	}
-	
+		}	
 }
 
 function test_input($data) {
@@ -59,12 +59,12 @@ if($user_login->is_logged_in()!="")
 				}
 				?>
 				
-				<input type="text"  placeholder="Name" name="tname" required="" value="<?php echo $row['userName'];?>">
-				<input type="text"  placeholder="Email" name="temail" required="" value="<?php echo $row['userEmail'];?>">
+				<input type="text"  placeholder="Name" name="tname" required value="<?php echo $row['userName'];?>">
+				<input type="text"  placeholder="Email" name="temail" required value="<?php echo $row['userEmail'];?>">
 				<input type="text"  placeholder="Contact Number" name="tphone" required="" max="12">
 				<input type="text"  placeholder="Trip Name Ex. Ooty Trip" name="tripName" required="">
 				 <label class="hvr-sweep-to-right">
-	           		<input type="submit" value="Send Feedback">
+	           		<input type="submit" value="Register Trip">
 	           </label>
 			</form>
 		</div>

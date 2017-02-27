@@ -1,4 +1,8 @@
 <?php
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
 session_start();
 
 require_once 'manual/class.user.php';
@@ -27,7 +31,11 @@ $stat = '<li>
 	
  }
 ?>
-<!DOCTYPE html>
+<!-- /*
+Author : Sugam Malviya
+code url : https://github.com/Sugamm/
+*/
+ --><!DOCTYPE html>
 <html>
 <head>
 <title>FizzFlyer</title>
@@ -84,13 +92,9 @@ $stat = '<li>
 				<nav class="pull">
 					<ul>
 						<li><a  href="index.php">Home</a></li>
-						<li><a  href="blog.php">Programs</a></li>
-						<li><a href="Register.php">Register </a></li>
-						<li><a href="suggestion.php">Suggestion</a></li>
-						<li><a href="terms.php">Terms </a></li>
-						<li><a href="faqs.php">FAQ </a></li>
-						<li><a  href="privacy.php">Privacy</a></li>
-						<li><a  href="about.php">About Us</a></li>
+						<li><a  href="#services">Service</a></li>
+						<li><a href="terms.php">Terms & policies </a></li>
+						<li><a  href="contact.php">About Us</a></li>
 						<li><a  href="contact.php">Contact</a></li>
 					</ul>
 				</nav>			
@@ -101,75 +105,17 @@ $stat = '<li>
 	<div class="container">
 		<!--logo-->
 			<div class="logo" style="display: inline-flex;">
-				<h1><a href="index.php"><img src="images/3.png" class="img-responsive" style="height: 35px;margin: 0 0 0 12px;"  alt="Logo" title="FizzFlyer"></a></h1>
-  				<h1 style="color:#fff; text-shadow:-3px 3px 8px #333">Fizzflyer</h1>
+				<h1><a href="index.php"><img src="images/headerLogo.png" class="img-responsive" style="height: 35px;margin: 0 0 0 12px;"  alt="Logo" title="FizzFlyer"></a></h1>
+  				<h1 style="color:#fff; text-shadow:-3px 3px 8px #333"><a href="index.php">fizzflyer</a></h1>
   			</div>
 		<!--//logo-->
 		
 		<div class="top-nav">
 			<ul class="right-icons">
-				<li><span ><i class="glyphicon glyphicon-phone"> </i>+91 701-050-9355</span></li>
+				<li><span ><i class="glyphicon glyphicon-phone"> </i>+91 988-420-4686</span></li>
 				<?php echo $stat;?>
 			</ul>
-			<!-- Modal -->
-				<div id="myModal" class="modal fade" role="dialog">
-				  <div class="modal-dialog">
-
-				    <!-- Modal content-->
-				    <div class="modal-content">
-					    <div class="modal-body">
-					      <div class="login-right">
-							<h3 style="margin:0 0 0em;">Login</h3>
-							<div class="login-top">
-								<?php 
-								if(isset($_GET['inactive']))
-								{
-									?>
-						            <div class='alert alert-error'>
-										<strong>Sorry!</strong> This Account is not Activated Go to your Inbox and Activate it.
-										<strong><?php echo $msg;?> </strong>
-									</div>
-						            <?php
-								}
-								?>
-								<div class="form-info" style="padding:0;">
-							        <form class="form-signin" method="post" action="login.php">
-							        	<div class='alert alert-error'>
-											<strong><?php echo $msg;?></strong>
-										</div>
-							       		<?php
-									        if(isset($_GET['error']))
-											{
-												?>
-									            <div class='alert alert-success'>
-													<strong>Wrong Details!</strong> 
-												</div>
-									            <?php
-											}
-										?>	
-									
-										<input type="email" class="text" placeholder="Email address" name="txtemail" required>
-										<input type="password"  placeholder="Password" placeholder="Password" name="txtupass" required>
-										 <label class="hvr-sweep-to-right">
-								           	<input type="submit" value="Submit" name="btn-login">
-								           </label>
-								         <a href="fpass.php">Lost your Password ? </a>
-									</form>
-								</div>
-							</div>
-						  </div>
-					   </div>
-				      <div class="modal-footer">
-				        <div class="create">
-							<h4>New To FizzFlyer?</h4>
-							<a class="hvr-sweep-to-right" href="register.php">Create an Account</a>
-							<div class="clearfix"> </div>
-						</div>
-				      </div>
-				    </div>
-				  </div>
-				</div>
-				<!-- //model -->
+			
 					<div class="nav-icon">
 						<div class="hero nav_slide_button" id="hero">
 								<a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i> </a>
@@ -191,24 +137,24 @@ $stat = '<li>
 					 <li>
 			          	 <div class="banner1">
 			           		<div class="caption">
-					          	<h3><span>Oot</span>y Trip</h3>
-					          	<p>27 Aug 2016</p>					          	
+					          	<h3><span>Wher</span>e the Journey Begins</h3>
+					          	<p>Discover your next great adventure, become an explorer to get started!</p>					          	
 							</div>
 			          	</div>
 			         </li>
 					 <li>
 			          	 <div class="banner2">
 			           		<div class="caption">
-					          	<h3><span>Kodaika</span>nal Trip</h3>
-					          	<p>Coming Soon, Stay Tuned.</p>
+					          	<h3><span>Disco</span>ver Fantastic Place</h3>
+					          	<p>We offer a variety of services and options</p>
 			          		</div>
 			          	</div>
 			         </li>
 			         <li>
 			          	 <div class="banner3">
 			           		<div class="caption">
-					          	<h3><span>Coor</span>g Trip</h3>
-					          	<p>Coming Soon, Stay Tuned.</p>
+					          	<h3><span>Let</span>'s Discover Fantastic Place</h3>
+					          	<p>Let's Explore</p>
 			          		</div>
 			          	</div>
 			         </li>		
@@ -292,12 +238,54 @@ $stat = '<li>
 <!--//header-->
 <!--content-->
 <div class="content">
+<div class="about-bottom" style="background-color: #F44336;">
+		<div class="container">
+				<div class="col-md-8 bottom-about">
+					<h3 style="font-size:28px;color: #fff ">Most Popular</h3><hr>
+					<p><span style="font-size: 17px;">This valentine's day be ready to fall in a trance, thumping the night off to electrifying EDM vibes</span><br>
+					Venue: <b>EVOKE BISTRO BAR AND GRILL ,CHENNAI <b><b>
+					on <b>14th Feb '17<b>
+					<br>
+					COVER ENTRY -
+					(Complimentary Drinks + Unlimited Starters)
+					<br>
+					
+					<span style="color: #e4ff00;">
+					*Girls walk in free through out the event.
+					</span>
+
+					<br>
+					<span style="font-size:20px;font-weight: 900;text-shadow: 2px 2px 12px #ccc;">
+					Single entry - Rs 1500 /-<br>
+					Couple entry -Rs 2000 /-<Br>
+					</span>
+					For passes contact on given numbers.
+					<br>
+					+91-8218377715,	+91-9003750142, +91-7021792975
+					<br>
+					<span style="color: #fff;">
+					<span style="color: #fff;">• </span>Entry strictly by Invitation
+					<span style="color: #fff;">• </span> Rights of Admission Reserved.
+					<span style="color: #fff;">• </span> Drugs or any kind of substance Abuse is Prohibited.
+					<span style="color: #fff;">• </span> The organisers reserve the right to evict anyone, they deem unfit from the premises.
+					<span style="color: #fff;">• </span> Normal Club Rules Apply.
+					</span>
+					</p>
+
+				</div>
+				<div class="col-md-4 bottom-about1">
+					<img src="images/party.jpeg" style="height: 400px;">
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+
 	<div class="content-grid">
 		<div class="container">
 			<h3>Most Popular</h3>
 				<div class="col-md-4 col-xs-4 col-sm-4 box_2">
 			     	 <a href="#" class="mask">
-			     	   	<img class="img-responsive zoom-img fix" src="images/ooty.jpg" alt="">
+			     	   	<img class="img-responsive zoom-img fix" src="images/3.jpg" alt="">
 			     	   	<span class="four">Rs. 4,299</span>
 			     	 </a>
 			     	   <div class="most-1">
@@ -307,7 +295,7 @@ $stat = '<li>
 			 </div>
 			  <div class="col-md-4 col-xs-4 col-sm-4 box_2">
 		     	 <a href="#" class="mask">
-			     	   	<img class="img-responsive zoom-img fix" src="images/kodai.jpg" alt="">
+			     	   	<img class="img-responsive zoom-img fix" src="images/1.jpg" alt="">
 			     	   	<span class="four">Coming Soon</span>
 			     	 </a>
 		     	   <div class="most-1">
@@ -318,7 +306,7 @@ $stat = '<li>
 		      </div>
 			  <div class="col-md-4 col-xs-4 col-sm-4 box_2">
 		     	 <a href="#" class="mask">
-			     	   	<img class="img-responsive zoom-img fix" src="images/coorg.jpg" alt="" >
+			     	   	<img class="img-responsive zoom-img fix" src="images/2.jpg" alt="" >
 			     	   	<span class="four">Coming Soon</span>
 			     	 </a>
 		     	   <div class="most-1">
@@ -335,11 +323,11 @@ $stat = '<li>
 		</div>
 	</div>
 <!--service-->
-	<div class="services">
+	<div class="services" id="services">
 		<div class="container">
 			<div class="service-top">
 				<h3>Services</h3>
-				<p>The world is a book and those who do not travel read only one page.</p>
+				<p style="font-size: 16px;">We are best in</p>
 			</div>
 			<div class="services-grid">
 		   		<div class="col-md-6 service-top1">
@@ -347,7 +335,7 @@ $stat = '<li>
 		   				<a href="#" class="hi-icon hi-icon-archive"><i class="fa fa-fire" style="font-size: 22px;" aria-hidden="true"></i> </a>
 		   			</div>
 		   			<div  class="ser-top">
-		   				<h4>Bonfire</h4>
+		   				<h4>GROUP ROAD TRIPS</h4>
 		   				<p>Hanging out by one of these with some good friends is our idea of a good time. Sitting around a bonfire with those who bring out the best in you; not the stress in you.</p>
 		   		    </div>
 					<div class="clearfix"> </div>
@@ -357,7 +345,7 @@ $stat = '<li>
 		   				<a href="#" class="hi-icon hi-icon-archive"><i class="fa fa-leaf" style="font-size: 22px;" aria-hidden="true"></i> </a>
 		   			</div>
 		   			<div  class="ser-top">
-		   				<h4>Food (breakfast + dinner)</h4>
+		   				<h4>TREKKING EXPEDITION</h4>
 		   				<p>Food is essential for life therefore food is something we never compromise on. One should not attend even the end of the world without a good <b>Breakfast</b>.</p>
 		   		    </div>
 					<div class="clearfix"> </div>
@@ -370,7 +358,7 @@ $stat = '<li>
 			   			<a href="#" class="hi-icon hi-icon-archive"><i class="fa fa-puzzle-piece" style="font-size: 22px;" aria-hidden="true"></i> </a>
 			   		</div>
 			   		<div  class="ser-top">
-			   			<h4>Games (Indoor + Outdoor)</h4>
+			   			<h4>CAB BOOKING</h4>
 			   				<p>We provide amazing group games which you never expect and Playing games with those who don't know much onne of the most amazing exprience in the world.</p>
 			   		</div>
 					<div class="clearfix"> </div>
@@ -392,10 +380,10 @@ $stat = '<li>
 <!--//services-->
 
 <!--project-->
-<div style="background:#4f4f51;">
+<!-- <div style="background:#4f4f51;">
 	<div class="container">
 	<div class="future">
-		<h3 style="color:#fff;">Fetured Projects</h3>
+		<h3 style="color:#fff;">Featured Trips</h3>
 			<div class="content-bottom-in">
 					<ul id="flexiselDemo1">			
 						<li>
@@ -499,7 +487,7 @@ $stat = '<li>
 		</div>
 	</div>
 </div>
-</div>		
+</div>		 -->
 		
 <!--partners-->
 	<!-- <div class="content-bottom1" style="background:#fff;">
@@ -525,6 +513,8 @@ $stat = '<li>
 		</div> -->	
 <!--//partners-->	
 	</div>
+
 <?php include 'code/footer.php';?>
+
 </body>
 </html>

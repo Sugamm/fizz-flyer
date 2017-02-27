@@ -1,4 +1,8 @@
 <?php
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
 session_start();
 require_once 'manual/class.user.php';
 
@@ -38,35 +42,53 @@ if(isset($_POST['btn-signup']))
 			$key = base64_encode($id);
 			$id = $key;
 			
-			$message = "					
-						Hello $uname,
-						<br /><br />
-						Welcome to FizzFlyer<br/>
-						To complete your registration  please , just click following link<br/>
-						<br /><br />
-						<a href='http://localhost/fizzflyerAWS/verify.php?id=$id&code=$code'>Click HERE to Activate :)</a>
-						<br /><br />
-						Thanks,";
+			$message = '
+						<html>
+							<head>
+							<title>Hello $uname,</title>
+								<style type="text/css">
+								.btn {
+								    padding: 14px 24px;
+								    border: 0 none;
+								    font-weight: 700;
+								    letter-spacing: 1px;
+								    text-transform: uppercase;
+								}
+								 
+								.btn:focus, .btn:active:focus, .btn.active:focus {
+								    outline: 0 none;
+								}
+								 
+								.btn-primary {
+								    background: #0099cc;
+								    color: #ffffff;
+								}
+								</style>
+								</head>
+							<body style="text-align:center;">
+							<h3>Welcome to FizzFlyer</h3>
+								<p>Hello '.$uname.',</p>
+								<p>To complete your registration  please , just click following link<p>
+								
+								<a href="http://fizzflyer.in/verify.php?id='.$id.'&code='.$code.'" class="btn btn-primary">Click HERE to Activate</a>
+								
+								<p>Thankyou. <br> Keep in touch with <a href="http://fizzflyer.in">Fizzflyer.in</a>.</p>
+							</body>
+							</html>
+						';
 						
 			$subject = "Confirm Registration";
 						
 			
-			if ($reg_user->send_mail($email,$message,$subject)) {
+			$reg_user->send_mail($email,$message,$subject);
 				$msg = "
 				<div class='alert alert-success'>
 					<button class='close' data-dismiss='alert'>&times;</button>
 					<strong>Success!</strong>  We've sent an email to $email.
                 Please click on the confirmation link in the email to create your account. 
+                <br> <b style='color:red'>If it is not appear in indox section then check it in Span section.</b>
 		  		</div>
 				";
-			}else{
-				$msg = "
-		      <div class='alert alert-error'>
-				<button class='close' data-dismiss='alert'>&times;</button>
-					<strong>Sorry !</strong>  We are not able to send email.
-			  </div>
-			  ";
-			}
 			
 		}
 		else
@@ -104,7 +126,7 @@ include 'code/head.php';
 				           	<input type="submit" value="Sign Up" name="btn-signup">
 				           </label>
 					</form>
-					<p>Already have a FizzFlyer account? <a href="login.php">Login</a></p>
+					<p>Already have a FizzFlyer account?<span data-toggle="modal" data-target="#myModal"> <a href="#" >Login</a></span></p>
 				</div>
 			
 	</div>

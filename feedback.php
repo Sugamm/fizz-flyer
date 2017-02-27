@@ -3,12 +3,15 @@
 	include 'code/head.php';
 ?>
 
-<div class=" banner-buying"></div>
+<div class=" banner-buying">
+	<div class="container">
+		<h3><span>Feedb</span>ack</h3>
+	</div>
+</div>
 <!--//header-->
 <!--contact-->
 <div class="feedback">
 	<div class="container">
-		<h3>Feedback</h3>
 		<div class="feedback-top">
 			<form method="post" action="#">
 				<?php if ($msg) {

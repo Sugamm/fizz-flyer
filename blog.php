@@ -13,21 +13,19 @@ include 'code/head.php';
 
 ?>
 <!--//-->	
-<div class=" banner-buying"></div>
-<!--//header-->
-<!---->
-<div class="contact">
+<div class=" banner-buying">
 	<div class="container">
 		<h3>Our Featured Trips</h3>
 	</div>
 </div>
-
+<!--//header-->
+<!---->
 <!---->
 <div class="single">
 	<div class="container">
 		<?php 
 		if (mysqli_num_rows($query) != 0) {
-			echo '<h3>For More Description</h3>';
+			//nothing
 		}
 		?>
 		<div class="buy-single">
@@ -51,7 +49,8 @@ include 'code/head.php';
 										 <p><span class="details4">Date</span> : <span class="two">'.$row['endDate'].'</span></p>
 										 <p><span class="details5">Price </span>:<span class="two"> '.$row['price'].'</span></p>				 
 										<div class="right-side">
-											 <a href="register-trips.php" class="hvr-sweep-to-right more" >Register Now For Trip!</a>        
+											 <a href="register-trips.php?id='.$row['id'].'" class="hvr-sweep-to-right more" >Register Now For Trip!</a>   
+											 <a href="artical.php?id='.$row['id'].'" class="hvr-sweep-to-right more" >Detail View</a>      
 										 </div>
 									 </div>
 								 <div class="clearfix"> </div>

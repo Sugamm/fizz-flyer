@@ -24,7 +24,7 @@ include 'code/head.php';
 			<h2 style="color:#ee6e0d; padding-bottom:10px"><?php echo $rowblog['title'];?></h2>
 		</div>		
         <div class=" buying-top">	
-			<img src=<?php echo "uploads/".$rowblog['imageName'];?> class="img-responsive" style="height:50%;" />
+			<img src=<?php echo "uploads/".$rowblog['imageName'];?> class="img-responsive" />
 		</div>
 		<div class="buy-sin-single">
 			<div class="col-sm-5 middle-side immediate">
@@ -41,7 +41,7 @@ include 'code/head.php';
 					</div>
 				 <div class="col-sm-7 buy-sin">
 				 	<h4>Description</h4>
-				 	<p><?php echo $rowblog['description'];?></p>
+				 	<p><?php echo htmlspecialchars_decode($rowblog['description']);?></p>
 				 </div>
 			<div class="clearfix"> </div>
 		</div>

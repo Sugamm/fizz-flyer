@@ -27,15 +27,18 @@ function test_input($data) {
 <?php include 'code/head.php';?>
 
 <!--//-->	
-<div class=" banner-buying"></div>
+<div class=" banner-buying">
+	<div class="container">
+		<h3><span>Conta</span>ct</h3>
+	</div>
+</div>
 <!--//header-->
 <!--contact-->
 <div class="contact">
 	<div class="container">
-		<h3>Contact</h3>
 	 <div class="contact-top">
 		<div class="col-md-6 contact-top1">
-		  <h4 > Info</h4>
+		  <h4>About fizzflyer</h4>
           <p class="text-contact">Fizzflyer is event or trips orgranising company which includes worlds best pricing and well organised. We don't treat people as our customer, we treat people as our family member.</p>
 		  <div class="contact-address">
 		  	<div class="col-md-6 contact-address1">

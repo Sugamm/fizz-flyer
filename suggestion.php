@@ -1,11 +1,14 @@
 <?php include 'code/head.php';?>
 <!--//-->	
-<div class=" banner-buying"></div>
+<div class=" banner-buying">
+	<div class="container">
+		<h3><span>Sugges</span>tion</h3> 
+	</div>
+</div>
 <!--//header-->
 <!--contact-->
 <div class="feedback">
 	<div class="container">
-		<h3>Make a Suggestion</h3>
 		<div class="feedback-top">
 			<form>
 				<input type="text"  placeholder="Name"  required="">

@@ -1,4 +1,8 @@
 <?php
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
 require_once 'manual/class.user.php';
 $user = new USER();
 
@@ -30,7 +34,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 			$msg = "
 		           <div class='alert alert-success'>
 				   <button class='close' data-dismiss='alert'>&times;</button>
-					  <strong>WoW !</strong>  Your Account is Now Activated : <a href='login.php'>Login here</a>
+					  <strong>WoW !</strong>  Your Account is Now Activated : <a href='index.php?verify'>Login here</a>
 			       </div>
 			       ";	
 		}
@@ -39,7 +43,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 			$msg = "
 		           <div class='alert alert-error'>
 				   <button class='close' data-dismiss='alert'>&times;</button>
-					  <strong>sorry !</strong>  Your Account is allready Activated : <a href='login.php'>Login here</a>
+					  <strong>sorry !</strong>  Your Account is allready Activated : <a href='index.php?verify'>Login here</a>
 			       </div>
 			       ";
 		}
@@ -49,7 +53,7 @@ if(isset($_GET['id']) && isset($_GET['code']))
 		$msg = "
 		       <div class='alert alert-error'>
 			   <button class='close' data-dismiss='alert'>&times;</button>
-			   <strong>sorry !</strong>  No Account Found : <a href='signup.php'>Signup here</a>
+			   <strong>sorry !</strong>  No Account Found : <a href='register.php'>Signup here</a>
 			   </div>
 			   ";
 	}	
@@ -58,7 +62,11 @@ if(isset($_GET['id']) && isset($_GET['code']))
 include 'code/head.php';
 ?>
 <!--//-->	
-<div class=" banner-buying"></div>
+<div class=" banner-buying">
+	<div class="container">
+		<h3><span>Verifica</span>tion</h3> 
+	</div>
+</div>
 <!--//header-->
     
     <div class="form-info">
@@ -71,7 +79,7 @@ include 'code/head.php';
 	<script type="text/javascript">
 		setTimeout(function () {
 			   window.location.href= 'index.php?verify'; // the redirect goes here
-			},1000000); 
+			},5000); 
 	</script>
     <?php include 'code/footer.php';?>
  

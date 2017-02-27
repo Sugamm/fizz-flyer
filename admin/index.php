@@ -1,4 +1,8 @@
 <?php 
+/*
+* Author : Sugam Malviya
+* code url : https://github.com/Sugamm/
+*/
 	error_reporting(E_ERROR | E_PARSE);	
 	$admin = "admin";
 	$admin_pw = "Sugam0030";
